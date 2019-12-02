@@ -1,0 +1,28 @@
+<h2>Products Data</h2>
+<form #frmRegister="ngForm" (submit)="SubmitData(frmRegister.value)">
+    <fieldset>
+        <legend>Register Product</legend>
+        <dl>
+            <dt>Product Name</dt>
+            <dd><input type="text" name="Name" ngModel #Name="ngModel"></dd>
+        </dl>
+        <dl>
+            <dt>Product Price</dt>
+            <dd><input type="text" name="Price" ngModel #Price="ngModel"></dd>
+        </dl>
+        <button>Add Product</button>
+    </fieldset>
+</form>
+
+<table width=400; border="1">
+    <thead>
+        <th>Name</th>
+        <th>Price</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td>{{ product.Name }}</td>
+            <td>{{ product.Price }}</td>
+        </tr>
+    </tbody>
+</table>
